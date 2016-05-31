@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		814550FC1CFE022900219143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814550FB1CFE022900219143 /* AppDelegate.swift */; };
-		814550FE1CFE022900219143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814550FD1CFE022900219143 /* ViewController.swift */; };
 		814551011CFE022900219143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814550FF1CFE022900219143 /* Main.storyboard */; };
 		814551041CFE022900219143 /* Livraria.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 814551021CFE022900219143 /* Livraria.xcdatamodeld */; };
 		814551061CFE022900219143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814551051CFE022900219143 /* Assets.xcassets */; };
 		814551091CFE022900219143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814551071CFE022900219143 /* LaunchScreen.storyboard */; };
+		814551111CFE033300219143 /* ItunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814551101CFE033300219143 /* ItunesAPI.swift */; };
+		814551151CFE0CAB00219143 /* ListaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814551141CFE0CAB00219143 /* ListaTableViewController.swift */; };
+		814551171CFE29C600219143 /* LivroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814551161CFE29C600219143 /* LivroTableViewCell.swift */; };
+		814551191CFE2B7800219143 /* Livro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814551181CFE2B7800219143 /* Livro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		814550F81CFE022900219143 /* Livraria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Livraria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814550FB1CFE022900219143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		814550FD1CFE022900219143 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		814551001CFE022900219143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814551031CFE022900219143 /* Livraria.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Livraria.xcdatamodel; sourceTree = "<group>"; };
 		814551051CFE022900219143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		814551081CFE022900219143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8145510A1CFE022900219143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		814551101CFE033300219143 /* ItunesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItunesAPI.swift; sourceTree = "<group>"; };
+		814551141CFE0CAB00219143 /* ListaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaTableViewController.swift; sourceTree = "<group>"; };
+		814551161CFE29C600219143 /* LivroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivroTableViewCell.swift; sourceTree = "<group>"; };
+		814551181CFE2B7800219143 /* Livro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Livro.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +63,15 @@
 			isa = PBXGroup;
 			children = (
 				814550FB1CFE022900219143 /* AppDelegate.swift */,
-				814550FD1CFE022900219143 /* ViewController.swift */,
 				814550FF1CFE022900219143 /* Main.storyboard */,
 				814551051CFE022900219143 /* Assets.xcassets */,
 				814551071CFE022900219143 /* LaunchScreen.storyboard */,
 				8145510A1CFE022900219143 /* Info.plist */,
 				814551021CFE022900219143 /* Livraria.xcdatamodeld */,
+				814551101CFE033300219143 /* ItunesAPI.swift */,
+				814551141CFE0CAB00219143 /* ListaTableViewController.swift */,
+				814551161CFE29C600219143 /* LivroTableViewCell.swift */,
+				814551181CFE2B7800219143 /* Livro.swift */,
 			);
 			path = Livraria;
 			sourceTree = "<group>";
@@ -138,9 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				814551191CFE2B7800219143 /* Livro.swift in Sources */,
+				814551111CFE033300219143 /* ItunesAPI.swift in Sources */,
+				814551171CFE29C600219143 /* LivroTableViewCell.swift in Sources */,
 				814551041CFE022900219143 /* Livraria.xcdatamodeld in Sources */,
-				814550FE1CFE022900219143 /* ViewController.swift in Sources */,
 				814550FC1CFE022900219143 /* AppDelegate.swift in Sources */,
+				814551151CFE0CAB00219143 /* ListaTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
