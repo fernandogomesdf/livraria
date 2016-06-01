@@ -96,6 +96,10 @@ class FavoritosViewController: UITableViewController {
                 
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
                
+                let alert = UIAlertController(title: "Info", message: "Excluído com sucesso!", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
                 
             } catch (ExcecoesDados.Delete){
                 print("Deu zebra no delete")

@@ -69,6 +69,17 @@ class DetalhesViewController: UIViewController {
         
     }
     
+    @IBAction func compartilhar(sender: AnyObject) {
+        let shareItems = [livroAtual!.autor, livroAtual!.titulo]
+        
+        let activityViewController:UIActivityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+        
+        //activityViewController.excludedActivityTypes = [UIActivityTypePrint, UIActivityTypePostToWeibo, UIActivityTypeCopyToPasteboard, UIActivityTypeAddToReadingList, UIActivityTypePostToVimeo]
+        
+        
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

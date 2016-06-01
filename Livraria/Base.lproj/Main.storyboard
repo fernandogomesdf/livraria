@@ -127,6 +127,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="fKn-VJ-tg4">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="ggu-C5-6nB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="fQX-EC-8tb">
+                            <connections>
+                                <action selector="compartilhar:" destination="8QS-Az-MZV" id="TYF-93-ztX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
