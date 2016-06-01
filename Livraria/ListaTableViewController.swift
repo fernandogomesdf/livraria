@@ -58,10 +58,12 @@ class ListaTableViewController: UITableViewController, UISearchBarDelegate,  API
             let autor = livro.valueForKey("artistName")! as! String
             let preco = livro.valueForKey("formattedPrice")! as! String
             let imagem = livro.valueForKey("artworkUrl60")! as! String
+            let descricao = livro.valueForKey("description")! as! String
+            let imagemGrande = livro.valueForKey("artworkUrl100")! as! String
             
             self.titulos.append(titulo)
             
-            let livro = Livro(titulo: titulo, autor: autor, preco: preco, imagem: imagem)
+            let livro = Livro(titulo: titulo, autor: autor, preco: preco, imagem: imagem, descricao: descricao, imagemGrande: imagemGrande)
             self.livros.append(livro)
             
         }
@@ -129,14 +131,18 @@ class ListaTableViewController: UITableViewController, UISearchBarDelegate,  API
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let detalhes: DetalhesViewController = segue.destinationViewController as! DetalhesViewController
+        detalhes.livroAtual = livros[self.tableView.indexPathForCell(sender! as! LivroTableViewCell)!.row];
+        
     }
-    */
+    
 
 }
