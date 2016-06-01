@@ -44,7 +44,7 @@ class ListaTableViewController: UITableViewController, UISearchBarDelegate,  API
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return titulos.count
+        return livros.count
     }
     
     func dadosRecebidos(dados: NSDictionary) {
@@ -55,9 +55,13 @@ class ListaTableViewController: UITableViewController, UISearchBarDelegate,  API
         
         for livro in resultados {
             let titulo = livro.valueForKey("trackCensoredName")! as! String
+            let autor = livro.valueForKey("artistName")! as! String
+            let preco = livro.valueForKey("formattedPrice")! as! String
+            let imagem = livro.valueForKey("artworkUrl60")! as! String
+            
             self.titulos.append(titulo)
             
-            let livro = Livro(titulo: "titulo do livro", autor: "autor", preco: 0.0, imagem: "imagem")
+            let livro = Livro(titulo: titulo, autor: autor, preco: preco, imagem: imagem)
             self.livros.append(livro)
             
         }
@@ -67,12 +71,17 @@ class ListaTableViewController: UITableViewController, UISearchBarDelegate,  API
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("minhaCelula", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("minhaCelula", forIndexPath: indexPath) as! LivroTableViewCell
 
         // Configure the cell...
         
-        let titulo : String = self.titulos[indexPath.row]
-        cell.textLabel?.text = titulo
+        let livro : Livro = self.livros[indexPath.row]
+        cell.tituloLabel.text = livro.getTitulo()
+        cell.autorLabel.text = livro.getAutor()
+        cell.precoLabel.text = livro.getPreco()
+    
+        print(livro.getImagem())
+        cell.capaImageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: livro.getImagem())!)!)
         
         return cell
     }

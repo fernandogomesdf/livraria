@@ -12,10 +12,10 @@ class Livro {
     
     var titulo : String
     var autor : String
-    var preco : Double
+    var preco : String
     var imagem : String
     
-    init (titulo: String, autor: String, preco: Double, imagem : String) {
+    init (titulo: String, autor: String, preco: String, imagem : String) {
         
         self.titulo = titulo
         self.autor = autor
@@ -25,11 +25,11 @@ class Livro {
     
     func setTitulo(titulo:String){self.titulo=titulo}
     func setAutor(autor:String){self.autor=autor}
-    func setPreco(preco:Double){self.preco=preco}
+    func setPreco(preco:String){self.preco=preco}
     func setImagem(imagem:String){self.imagem=imagem}
     
     func getTitulo()->String {return titulo}
     func getAutor()->String{return autor}
-    func getPreco()->Double{return preco}
+    func getPreco()->String{return preco}
     func getImagem()->String{return imagem}
 }

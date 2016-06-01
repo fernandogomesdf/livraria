@@ -10,7 +10,7 @@ import UIKit
 
 class LivroTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var capaImageView: UIView!
+    @IBOutlet weak var capaImageView: UIImageView!
     @IBOutlet weak var tituloLabel: UILabel!
     @IBOutlet weak var autorLabel: UILabel!
     @IBOutlet weak var precoLabel: UILabel!
