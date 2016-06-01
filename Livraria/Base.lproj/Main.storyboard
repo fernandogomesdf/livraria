@@ -22,11 +22,11 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="minhaCelula" rowHeight="187" id="eaV-3D-Ovx" customClass="LivroTableViewCell" customModule="Livraria" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="minhaCelula" rowHeight="187" id="eaV-3D-Ovx" customClass="LivroTableViewCell" customModule="Livraria" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="320" height="187"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eaV-3D-Ovx" id="QZ1-zt-kfu">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="186"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="186"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdL-JQ-7Pa">
@@ -57,6 +57,7 @@
                                     <outlet property="capaImageView" destination="UQb-T1-NeY" id="jCW-Vt-dn6"/>
                                     <outlet property="precoLabel" destination="mcV-52-CD1" id="MmE-KP-Wwd"/>
                                     <outlet property="tituloLabel" destination="GdL-JQ-7Pa" id="t7R-gP-FOd"/>
+                                    <segue destination="8QS-Az-MZV" kind="show" trigger="accessoryAction" id="h6h-rx-3Qt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,6 +72,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lV1-nz-ejI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="741" y="-209"/>
+        </scene>
+        <!--Detalhes View Controller-->
+        <scene sceneID="I6n-Fr-jdf">
+            <objects>
+                <viewController id="8QS-Az-MZV" customClass="DetalhesViewController" customModule="Livraria" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JBV-Tf-GD1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oes-m2-cwm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qt6-Ok-a8x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fKn-VJ-tg4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eV5-iX-Psv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1168" y="-209"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1R6-IQ-fmg">
