@@ -21,6 +21,7 @@
 		817A7C6E1CFF61FD00D03914 /* LivroFavorito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A7C6C1CFF61FD00D03914 /* LivroFavorito.swift */; };
 		817A7C721CFF628700D03914 /* LivroFavoritoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A7C711CFF628700D03914 /* LivroFavoritoDAO.swift */; };
 		817A7C741CFF6F1E00D03914 /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A7C731CFF6F1E00D03914 /* FavoritosViewController.swift */; };
+		819F708C1CFF8DF4003C8C9F /* AddFavorito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F708B1CFF8DF4003C8C9F /* AddFavorito.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		817A7C6C1CFF61FD00D03914 /* LivroFavorito.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivroFavorito.swift; sourceTree = "<group>"; };
 		817A7C711CFF628700D03914 /* LivroFavoritoDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivroFavoritoDAO.swift; sourceTree = "<group>"; };
 		817A7C731CFF6F1E00D03914 /* FavoritosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
+		819F708B1CFF8DF4003C8C9F /* AddFavorito.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFavorito.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				817A7C691CFF4A7C00D03914 /* DetalhesViewController.swift */,
 				817A7C711CFF628700D03914 /* LivroFavoritoDAO.swift */,
 				817A7C731CFF6F1E00D03914 /* FavoritosViewController.swift */,
+				819F708B1CFF8DF4003C8C9F /* AddFavorito.swift */,
 			);
 			path = Livraria;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				817A7C6A1CFF4A7C00D03914 /* DetalhesViewController.swift in Sources */,
 				817A7C721CFF628700D03914 /* LivroFavoritoDAO.swift in Sources */,
 				814551191CFE2B7800219143 /* Livro.swift in Sources */,
+				819F708C1CFF8DF4003C8C9F /* AddFavorito.swift in Sources */,
 				817A7C6D1CFF61FD00D03914 /* LivroFavorito+CoreDataProperties.swift in Sources */,
 				814551111CFE033300219143 /* ItunesAPI.swift in Sources */,
 				817A7C741CFF6F1E00D03914 /* FavoritosViewController.swift in Sources */,
