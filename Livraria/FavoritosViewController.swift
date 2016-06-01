@@ -11,6 +11,8 @@ import UIKit
 class FavoritosViewController: UITableViewController {
     
     var livros : [Livro] = []
+    var livrosFavoritos : [LivroFavorito] = []
+    let livrosDAO : LivrosDAO = LivrosDAO()
     
     
     override func viewDidLoad() {
@@ -28,12 +30,10 @@ class FavoritosViewController: UITableViewController {
         
         self.livros.removeAll()
         
-        
-        let livrosDAO : LivrosDAO = LivrosDAO()
-        
         for livroFavorito in livrosDAO.obterLivros() {
             let livro : Livro = Livro(titulo: livroFavorito.titulo!, autor:livroFavorito.autor!, preco:livroFavorito.preco!, imagem: livroFavorito.imagem!, descricao:livroFavorito.descricao!, imagemGrande: livroFavorito.imagem!)
             self.livros.append(livro)
+            self.livrosFavoritos.append(livroFavorito)
         }
         self.tableView.reloadData()
     }
@@ -81,17 +81,33 @@ class FavoritosViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            
+            do {
+                try livrosDAO.apagar(livrosFavoritos[indexPath.row])
+                
+                self.livrosFavoritos.removeAtIndex(indexPath.row)
+                self.livros.removeAtIndex(indexPath.row)
+                
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+               
+                
+            } catch (ExcecoesDados.Delete){
+                print("Deu zebra no delete")
+            } catch {
+                print("Deu zebra")
+            }
+            
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
