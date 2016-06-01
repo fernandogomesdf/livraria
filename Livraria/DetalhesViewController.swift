@@ -57,7 +57,20 @@ class DetalhesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func salvar(sender: AnyObject) {
+        let livrosDAO : LivrosDAO = LivrosDAO()
+        
+        let livroFavorito : LivroFavorito = livrosDAO.novo()
+        livroFavorito.autor = livroAtual?.getAutor()
+        livroFavorito.titulo = livroAtual?.getTitulo()
+        livroFavorito.descricao = livroAtual?.getDescricao()
+        livroFavorito.preco = livroAtual?.getPreco()
+        livroFavorito.imagem = livroAtual?.getImagemGrande()
+        
+        livrosDAO.salvar()
+        
+    }
+    
     /*
     // MARK: - Navigation
 
