@@ -46,9 +46,7 @@ class DetalhesViewController: UIViewController {
         }
         
         // Texto formatado
-        self.descricaoLabel.attributedText = str
-        
-        
+        self.descricaoLabel.attributedText = str 
         
     }
 
