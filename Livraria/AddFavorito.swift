@@ -21,7 +21,7 @@ class AddFavorito: UIActivity {
     }
     
     override func activityTitle()->String?{
-        return "Add Favorito"
+        return "Salvar"
     }
     
     override func canPerformWithActivityItems(activityItems: [AnyObject]) -> Bool {

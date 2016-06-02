@@ -142,6 +142,8 @@ class ListaTableViewController: UITableViewController, UISearchBarDelegate,  API
         let detalhes: DetalhesViewController = segue.destinationViewController as! DetalhesViewController
         detalhes.livroAtual = livros[self.tableView.indexPathForCell(sender! as! LivroTableViewCell)!.row];
         
+        detalhes.isFavoritos = false
+        
     }
     
 

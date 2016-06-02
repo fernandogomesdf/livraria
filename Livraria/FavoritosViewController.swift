@@ -138,6 +138,8 @@ class FavoritosViewController: UITableViewController {
         
         let detalhes: DetalhesViewController = segue.destinationViewController as! DetalhesViewController
         detalhes.livroAtual = livros[self.tableView.indexPathForCell(sender! as! LivroTableViewCell)!.row];
+        
+        detalhes.isFavoritos = true
     }
     
 

@@ -21,7 +21,7 @@ class DetalhesViewController: UIViewController {
     
     @IBOutlet weak var labelPreco: UILabel!
     
-    
+    var isFavoritos : Bool = false
     var livroAtual : Livro?
     let livroDAO : LivrosDAO = LivrosDAO()
     
@@ -73,9 +73,15 @@ class DetalhesViewController: UIViewController {
     @IBAction func compartilhar(sender: AnyObject) {
         let shareItems = [livroAtual!.autor, livroAtual!.titulo]
         
-        let addFavorito : AddFavorito = AddFavorito(livro: livroAtual!)
+        let minhasAtividades : [UIActivity]?
         
-        let activityViewController:UIActivityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities:  [addFavorito])
+        if isFavoritos {
+            minhasAtividades = nil
+        } else {
+            minhasAtividades = [AddFavorito(livro: self.livroAtual!)]
+        }
+        
+        let activityViewController:UIActivityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities:  minhasAtividades)
         
         activityViewController.excludedActivityTypes = [UIActivityTypePrint, UIActivityTypePostToWeibo, UIActivityTypeCopyToPasteboard, UIActivityTypeAddToReadingList, UIActivityTypePostToVimeo]
         
