@@ -225,12 +225,15 @@
                             </searchBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Jy-tU-OU5">
                                 <rect key="frame" x="0.0" y="108" width="320" height="411"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="vRi-K9-2wp" id="xNh-Q2-QHd"/>
+                                    <outletCollection property="gestureRecognizers" destination="Ota-e0-qlh" appends="YES" id="Cpo-xV-GXd"/>
                                 </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" title="Mapas" id="oHQ-Mb-7Pe"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -240,6 +243,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgL-Q9-xcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1" id="Ota-e0-qlh">
+                    <connections>
+                        <action selector="marcarPino:" destination="vRi-K9-2wp" id="rzk-Us-oS9"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1553" y="1346"/>
         </scene>

@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MapasViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
+class MapasViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapa: MKMapView!
@@ -89,6 +89,57 @@ class MapasViewController: UIViewController, CLLocationManagerDelegate, UISearch
                 self.presentViewController(alerta, animated: true, completion: nil)
             }
         })
+    }
+    
+    // gesto
+    
+    @IBAction func marcarPino(sender: AnyObject) {
+        let gesto: UILongPressGestureRecognizer = sender as! UILongPressGestureRecognizer
+        
+        if (gesto.state == .Ended) {
+            let tappedPoint: CGPoint = gesto.locationInView(self.mapa)
+            let coordenada: CLLocationCoordinate2D = self.mapa.convertPoint(tappedPoint, toCoordinateFromView: self.mapa)
+            let pin: LivrariaAnnotation = LivrariaAnnotation(coordinate: coordenada, title: "Pino", subtitle: "Meu pino")
+            self.mapa.addAnnotation(pin)
+        }
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        print("calloutAccessoryControlTapped")
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        var pinView: MKAnnotationView?
+        
+        if(!annotation.isKindOfClass(MKUserLocation.classForCoder())){
+            let livrariaAnnotation: LivrariaAnnotation = annotation as! LivrariaAnnotation
+            
+            if let pin = mapa.dequeueReusableAnnotationViewWithIdentifier("pinLivraria"){
+                
+                pinView = pin
+            }
+            else{
+                pinView = MKPinAnnotationView(annotation: livrariaAnnotation, reuseIdentifier: "pinLivraria")
+                
+                pinView!.canShowCallout = true
+                
+                //pinView!.image = UIImage(named: "newIcon_40.png")
+                
+                //pinView!.centerOffset = CGPointMake(0, (-1) * (pinView!.image!.size.height / 2))
+                
+                let btnPin: UIButton = UIButton(type: .DetailDisclosure)
+                pinView!.rightCalloutAccessoryView = btnPin
+                
+            }
+        }
+        
+        return pinView
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let loc = locationManager.location {
+            self.mapa.setRegion(MKCoordinateRegionMakeWithDistance(loc.coordinate, 600, 800), animated: true)
+        }
     }
     
     /*
