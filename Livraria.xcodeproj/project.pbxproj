@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8129ABB71D009EC900DE19A1 /* MapasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8129ABB61D009EC900DE19A1 /* MapasViewController.swift */; };
+		8129ABB91D00A16E00DE19A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129ABB81D00A16E00DE19A1 /* MapKit.framework */; };
+		8129ABBB1D00A36200DE19A1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8129ABBA1D00A36200DE19A1 /* CoreLocation.framework */; };
+		8129ABBD1D00B0B700DE19A1 /* LivrariaAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8129ABBC1D00B0B700DE19A1 /* LivrariaAnnotation.swift */; };
 		814550FC1CFE022900219143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814550FB1CFE022900219143 /* AppDelegate.swift */; };
 		814551011CFE022900219143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814550FF1CFE022900219143 /* Main.storyboard */; };
 		814551041CFE022900219143 /* Livraria.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 814551021CFE022900219143 /* Livraria.xcdatamodeld */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8129ABB61D009EC900DE19A1 /* MapasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapasViewController.swift; sourceTree = "<group>"; };
+		8129ABB81D00A16E00DE19A1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8129ABBA1D00A36200DE19A1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8129ABBC1D00B0B700DE19A1 /* LivrariaAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivrariaAnnotation.swift; sourceTree = "<group>"; };
 		814550F81CFE022900219143 /* Livraria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Livraria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814550FB1CFE022900219143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		814551001CFE022900219143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8129ABBB1D00A36200DE19A1 /* CoreLocation.framework in Frameworks */,
+				8129ABB91D00A16E00DE19A1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +68,8 @@
 		814550EF1CFE022900219143 = {
 			isa = PBXGroup;
 			children = (
+				8129ABBA1D00A36200DE19A1 /* CoreLocation.framework */,
+				8129ABB81D00A16E00DE19A1 /* MapKit.framework */,
 				817A7C6B1CFF61FD00D03914 /* LivroFavorito+CoreDataProperties.swift */,
 				817A7C6C1CFF61FD00D03914 /* LivroFavorito.swift */,
 				814550FA1CFE022900219143 /* Livraria */,
@@ -90,6 +102,8 @@
 				817A7C711CFF628700D03914 /* LivroFavoritoDAO.swift */,
 				817A7C731CFF6F1E00D03914 /* FavoritosViewController.swift */,
 				819F708B1CFF8DF4003C8C9F /* AddFavorito.swift */,
+				8129ABB61D009EC900DE19A1 /* MapasViewController.swift */,
+				8129ABBC1D00B0B700DE19A1 /* LivrariaAnnotation.swift */,
 			);
 			path = Livraria;
 			sourceTree = "<group>";
@@ -173,8 +187,10 @@
 				814551111CFE033300219143 /* ItunesAPI.swift in Sources */,
 				817A7C741CFF6F1E00D03914 /* FavoritosViewController.swift in Sources */,
 				814551171CFE29C600219143 /* LivroTableViewCell.swift in Sources */,
+				8129ABBD1D00B0B700DE19A1 /* LivrariaAnnotation.swift in Sources */,
 				814551041CFE022900219143 /* Livraria.xcdatamodeld in Sources */,
 				817A7C6E1CFF61FD00D03914 /* LivroFavorito.swift in Sources */,
+				8129ABB71D009EC900DE19A1 /* MapasViewController.swift in Sources */,
 				814550FC1CFE022900219143 /* AppDelegate.swift in Sources */,
 				814551151CFE0CAB00219143 /* ListaTableViewController.swift in Sources */,
 			);
