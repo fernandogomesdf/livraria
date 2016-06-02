@@ -23,6 +23,7 @@ class DetalhesViewController: UIViewController {
     
     
     var livroAtual : Livro?
+    let livroDAO : LivrosDAO = LivrosDAO()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,9 +73,13 @@ class DetalhesViewController: UIViewController {
     @IBAction func compartilhar(sender: AnyObject) {
         let shareItems = [livroAtual!.autor, livroAtual!.titulo]
         
-        let activityViewController:UIActivityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+        let addFavorito : AddFavorito = AddFavorito(livro: livroAtual!)
+        
+        let activityViewController:UIActivityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities:  [addFavorito])
         
         activityViewController.excludedActivityTypes = [UIActivityTypePrint, UIActivityTypePostToWeibo, UIActivityTypeCopyToPasteboard, UIActivityTypeAddToReadingList, UIActivityTypePostToVimeo]
+        
+        
         
         
         self.presentViewController(activityViewController, animated: true, completion: nil)

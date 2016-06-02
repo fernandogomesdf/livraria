@@ -10,20 +10,38 @@ import UIKit
 
 class AddFavorito: UIActivity {
     
-    var livroFavorito : LivroFavorito?
-    let livroDAO : LivrosDAO = LivrosDAO()
+    let livro: Livro?
     
-    
-    override func activityType() -> String? {
-        return "AddFavorito"
+    init(livro: Livro){
+        self.livro = livro
     }
     
-    override func activityTitle() -> String? {
+    override func activityType()->String?{
+        return "br.com.begyn.AddLivro"
+    }
+    
+    override func activityTitle()->String?{
         return "Add Favorito"
     }
     
-    override func performActivity() {
-        
+    override func canPerformWithActivityItems(activityItems: [AnyObject]) -> Bool {
+        return true
     }
     
+    override func prepareWithActivityItems(activityItems: [AnyObject]) {
+        salvarLivro()
+    }
+    
+    func salvarLivro(){
+        let livrosDAO: LivrosDAO = LivrosDAO()
+        let livroFavorito: LivroFavorito = livrosDAO.novo()
+        
+        livroFavorito.autor = livro!.getAutor()
+        livroFavorito.titulo = livro!.getTitulo()
+        livroFavorito.preco = livro!.getPreco()
+        livroFavorito.descricao = livro!.getDescricao()
+        livroFavorito.imagem = livro!.getImagemGrande()
+        
+        livrosDAO.salvar()
+    }
 }
